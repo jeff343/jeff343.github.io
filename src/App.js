@@ -1,6 +1,7 @@
 // import { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, GlobalStyles } from "./styles/theme";
+import Header from "./components/Header";
 import PortfolioPage from "./pages/PortfolioPage";
 
 // TODO: add theme switcher to header
@@ -14,6 +15,7 @@ function App() {
   return (
     <ThemeProvider theme={lightTheme}>
       <GlobalStyles />
+      <Header />
       <PortfolioPage />
     </ThemeProvider>
   );
