@@ -1,7 +1,21 @@
+// import { useState } from "react";
+import { ThemeProvider } from "styled-components";
+import { lightTheme, GlobalStyles } from "./styles/theme";
+import PortfolioPage from "./pages/PortfolioPage";
 
+// TODO: add theme switcher to header
 function App() {
+  // const [theme, setTheme] = useState(lightTheme);
+
+  // const toggleTheme = () => {
+  //   setTheme(theme === lightTheme ? darkTheme : lightTheme);
+  // };
+
   return (
-    <h1>Hello World</h1>
+    <ThemeProvider theme={lightTheme}>
+      <GlobalStyles />
+      <PortfolioPage />
+    </ThemeProvider>
   );
 }
 
