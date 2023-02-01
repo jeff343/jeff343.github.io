@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const Container = styled.header`
+    position: absolute;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,10 +45,9 @@ const Header = () => {
                 JC
             </NameDisplay>
             <Navbar>
-                <NavLink href='/'>About</NavLink>
-                <NavLink href='/'>Skills</NavLink>
-                <NavLink href='/'>Projects</NavLink>
-                <NavLink href='/'>Contact</NavLink>
+                <NavLink href='/'>about</NavLink>
+                <NavLink href='/'>projects</NavLink>
+                <NavLink href='/'>contact</NavLink>
             </Navbar>
         </Container>
     )

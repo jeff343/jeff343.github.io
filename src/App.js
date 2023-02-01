@@ -1,6 +1,6 @@
 // import { useState } from "react";
 import { ThemeProvider } from "styled-components";
-import { lightTheme, GlobalStyles } from "./styles/theme";
+import { darkTheme, GlobalStyles } from "./styles/theme";
 import Header from "./components/Header";
 import PortfolioPage from "./pages/PortfolioPage";
 
@@ -13,7 +13,7 @@ function App() {
   // };
 
   return (
-    <ThemeProvider theme={lightTheme}>
+    <ThemeProvider theme={darkTheme}>
       <GlobalStyles />
       <Header />
       <PortfolioPage />

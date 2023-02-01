@@ -15,8 +15,9 @@ const Container = styled.div`
     justify-content: space-around;
     height: 300px; 
     width: 350px;
-    box-shadow: 0 0 3px 0 ${props => props.theme.secondary};
-    border-radius: 5px;
+    background: ${props => props.theme.primary};
+    color: ${props => props.theme.dark};
+    border-radius: 20px;
 `;
 
 const Row = styled.div`
@@ -84,7 +85,7 @@ const SkillsCard = () => {
                     <IconStyle>
                         <Mui />
                     </IconStyle>
-                    <Text>Mui</Text>
+                    <Text>MUI</Text>
                 </IconWrapper>
             </Row>
         </Container>

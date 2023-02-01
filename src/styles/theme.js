@@ -12,6 +12,7 @@ const lightTheme = {
     primary: '#e8f0fa',
     secondary: '#cee0f4',
     tertiary: '#5170bf',
+    dark: '#3f3f70',
     color: 'black'
 };
 
@@ -20,6 +21,7 @@ const darkTheme = {
     primary: '#06325E',
     secondary: '#65809F',
     tertiary: '#C0C4CF',
+    dark: '#c8c8c8',
     color: 'white'
 };
 
