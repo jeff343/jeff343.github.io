@@ -1,8 +1,10 @@
+import IntroDisplay from "../components/IntroDisplay";
+
 
 const PortfolioPage = () => {
 
     return (
-        <h1>Portfolio Page</h1>
+        <IntroDisplay />
     )
 }
 
