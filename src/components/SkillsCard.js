@@ -15,7 +15,6 @@ const Container = styled.div`
     justify-content: space-around;
     height: 300px; 
     width: 350px;
-    background: ${props => props.theme.primary};
     color: ${props => props.theme.dark};
     border-radius: 20px;
 `;

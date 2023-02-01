@@ -8,3 +8,10 @@ export const IconStyle = styled.div`
         color: ${props => props.theme.tertiary};
     }
 `;
+
+export const ToggleIcon = styled.div`
+    ${StyledIconBase} {
+        height: 25px;
+        width: auto;
+    }
+`;

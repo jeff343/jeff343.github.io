@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 const Container = styled.header`
     position: absolute;
@@ -37,7 +38,7 @@ const NameDisplay = styled.h1`
     color: ${props => props.theme.tertiary};
 `;
 
-const Header = () => {
+const Header = ({ toggleTheme, current }) => {
 
     return (
         <Container>
@@ -49,6 +50,7 @@ const Header = () => {
                 <NavLink href='/'>projects</NavLink>
                 <NavLink href='/'>contact</NavLink>
             </Navbar>
+            <ThemeSwitcher toggleTheme={toggleTheme} current={current} />
         </Container>
     )
 };
