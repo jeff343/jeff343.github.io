@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import NameCard from "./NameCard";
 import SkillsCard from "./SkillsCard";
-import mountainPic from "../assets/images/mountain-pic.jpg";
+// import mountainPic from "../assets/images/mountain-pic.jpg";
+// import moonPic from "../assets/images/moon-pic.jpg";
 
 const Container = styled.div`
     width: 100%;
@@ -9,7 +10,7 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     margin: auto;
-    background-image: linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.5)), url(${mountainPic});
+    background-image: ${props => props.theme.bgimg};
     background-position: center;
     background-size: cover;
 `;
