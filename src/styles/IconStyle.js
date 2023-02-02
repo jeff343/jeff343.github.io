@@ -11,7 +11,7 @@ export const IconStyle = styled.div`
 
 export const ToggleIcon = styled.div`
     ${StyledIconBase} {
-        height: 25px;
+        height: 20px;
         width: auto;
     }
 `;

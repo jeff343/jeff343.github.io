@@ -10,13 +10,13 @@ import { ToggleIcon } from "../styles/IconStyle";
 const Container = styled.div`
     width: 150px;
     display: flex;
-    align-items: center;
+    align-items: end;
     justify-content: center;
 `;
 
 const ButtonContainer = styled.div`
-    width: 75px;
-    height: 30px;
+    width: 50px;
+    height: 25px;
     position: relative;
     margin: auto 5px;
 `;
@@ -33,10 +33,10 @@ const ThemeSwitchButton = styled.button`
 
     &:after {
         content: "";
-        width: 26px;
-        height: 26px;
-        top: 2px;
-        left: ${props => (props.current === 'light' ? '2px' : '73px') };
+        width: 20px;
+        height: 20px;
+        top: 5px;
+        left: ${props => (props.current === 'light' ? '2px' : '48px') };
         transform: ${props => (props.current === 'light' ? 'none' : 'translateX(-100%)')};
         border-radius: 100%;
         position: absolute;
