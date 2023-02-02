@@ -1,10 +1,17 @@
 import styled from "styled-components";
+import { breakpoints as bp } from "../styles/breakpoints";
 
 const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: left;
     justify-content: start;
+
+    @media screen and (max-width: ${bp.md}) {
+        border-bottom: 3px solid ${props => props.theme.dark};
+        margin-bottom: 20px;
+        padding-bottom: 30px;
+    }
 `;
 const Title = styled.h1`
     font-size: 60px;

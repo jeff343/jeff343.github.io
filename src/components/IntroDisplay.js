@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import NameCard from "./NameCard";
 import SkillsCard from "./SkillsCard";
-// import mountainPic from "../assets/images/mountain-pic.jpg";
-// import moonPic from "../assets/images/moon-pic.jpg";
+import { breakpoints as bp } from "../styles/breakpoints";
 
 const Container = styled.div`
     width: 100%;
@@ -20,6 +19,12 @@ const ContentWrapper = styled.section`
     justify-content: space-evenly;
     width: 100%;
     margin: auto;
+
+    @media screen and (max-width: ${bp.md}) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
 `;
 
 const IntroDisplay = () => {

@@ -12,8 +12,8 @@ import { Javascript, Mui } from "styled-icons/simple-icons";
 const Container = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    height: 300px; 
+    justify-content: space-between;
+    height: 250px; 
     width: 350px;
     color: ${props => props.theme.dark};
     border-radius: 20px;
@@ -23,7 +23,6 @@ const Row = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 15px;
 `;
 
 const Title = styled.h2`
@@ -37,6 +36,7 @@ const IconWrapper = styled.div`
 
 const Text = styled.p`
     font-size: 16px;
+    font-weight: bold;
 `;
 
 
