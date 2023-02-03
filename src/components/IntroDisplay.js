@@ -18,6 +18,7 @@ const ContentWrapper = styled.section`
     display: flex;
     justify-content: space-evenly;
     width: 100%;
+    max-width: 1400px;
     margin: auto;
 
     @media screen and (max-width: ${bp.md}) {
