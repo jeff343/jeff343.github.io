@@ -25,6 +25,10 @@ const CardContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
+
+    @media screen and (max-width: ${bp.md}) {
+        grid-template-columns: 1fr;
+    }
 `;
 
 const projectObj = [
