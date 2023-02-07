@@ -136,7 +136,6 @@ const Header = ({ toggleTheme, current }) => {
                 <NavList>
                     <NavItem><a href='/'>about</a></NavItem>
                     <NavItem><a href='/'>projects</a></NavItem>
-                    <NavItem><a href='/'>contact</a></NavItem>
                 </NavList>
             </NavCollapse>
             <ThemeSwitcher toggleTheme={toggleTheme} current={current} />

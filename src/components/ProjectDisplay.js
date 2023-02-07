@@ -3,14 +3,15 @@ import ProjectCard from "./ProjectCard";
 import { breakpoints as bp } from "../styles/breakpoints";
 
 const Container = styled.section`
-    margin: 20px auto;
+    margin: 20px auto 100px;
     max-width: 900px;
 `;
 
 const Title = styled.h2`
     font-size: 36px;
     text-align: left;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+    text-decoration: underline;
 `;
 
 const CardContainer = styled.div`
@@ -18,7 +19,7 @@ const CardContainer = styled.div`
     margin: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
+    grid-gap: 100px;
 
     @media screen and (max-width: ${bp.md}) {
         grid-template-columns: 1fr;

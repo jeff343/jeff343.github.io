@@ -8,9 +8,11 @@ const Container = styled.section`
     display: flex;
     width: 100%;
     max-width: 900px;
-    margin: 40px auto;
+    margin: 150px auto;
+    padding-bottom: 150px;
     justify-content: space-between;
     align-items: start;
+    border-bottom: 3px solid ${props => props.theme.secondary};
 
     @media screen and (max-width: ${bp.md}) {
         flex-direction: column;
@@ -26,6 +28,7 @@ const AboutMe = styled.div`
 const Title = styled.h2`
     font-size: 36px;
     margin-bottom: 20px;
+    text-decoration: underline;
     
     @media screen and (max-width: ${bp.md}) {
         text-align: center;
