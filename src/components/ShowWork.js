@@ -18,7 +18,7 @@ align-items: center;
 justify-content: center;
 border-radius: 100%;
 background: rgba(255, 255, 255, 0.5);
-border 3px solid black;
+border 3px solid ${props => props.theme.color};
 border-right: none;
 border-top: none;
 cursor: pointer;

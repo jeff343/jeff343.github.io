@@ -48,13 +48,13 @@ const CardBack = styled.div`
 const Title = styled.h3`
     font-size: 24px;
     text-align: left;
-    color: ${props => props.theme.secondary};
 `;
 
 const FrontTitle = styled(Title)`
     position: absolute;
     bottom: 5px;
     left: 20px;
+    color: ${props => props.theme.secondary};
 `;
 
 const Text = styled.p`

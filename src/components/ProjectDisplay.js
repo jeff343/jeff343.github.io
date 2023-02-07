@@ -11,7 +11,6 @@ const Title = styled.h2`
     font-size: 36px;
     text-align: left;
     margin-bottom: 30px;
-    color: ${props => props.theme.tertiary};
 `;
 
 const CardContainer = styled.div`

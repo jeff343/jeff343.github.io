@@ -15,17 +15,15 @@ const lightTheme = {
     primary: '#e8f0fa',
     secondary: '#cee0f4',
     tertiary: '#5170bf',
-    dark: '#3f3f70',
     bgimg: `linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.9)), url(${mountainPic})`,
-    color: 'black'
+    color: '#3f3f70'
 };
 
 const darkTheme = {
     background: '#121416',
-    // primary: '',
-    secondary: '#65809F',
-    tertiary: '#C0C4CF',
-    dark: '#c8c8c8',
+    primary: '#1c1c1c',
+    secondary: '#C0C4CF',
+    tertiary: '#c8c8c8',
     bgimg: `linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.9)), url(${mountainPic})`,
     color: 'white'
 };

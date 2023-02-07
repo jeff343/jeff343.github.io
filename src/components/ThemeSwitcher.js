@@ -27,7 +27,7 @@ const ThemeSwitchButton = styled.button`
     border-radius: 200px;
     border: none;
     cursor: pointer;
-    background: ${props => props.theme.primary};
+    background: ${props => props.theme.secondary};
     box-shadow: 0 0 15px inset grey;
     transition: 0.3s;
 
@@ -40,7 +40,7 @@ const ThemeSwitchButton = styled.button`
         transform: ${props => (props.current === 'light' ? 'none' : 'translateX(-100%)')};
         border-radius: 100%;
         position: absolute;
-        background: ${props => props.theme.tertiary};
+        background: ${props => props.theme.color};
         box-shadow: 0 0 5px inset grey;
         transition: 0.3s;
     }

@@ -56,12 +56,11 @@ const NavItem = styled.li`
     font-size: 18px;
     text-align: left;
     margin: 15px;
-    color: ${props => props.theme.tertiary};
     cursor: pointer;
 
     & a {
         text-decoration: none;
-        color: ${props => props.theme.dark};
+        color: ${props => props.theme.tertiary};
     }
 
     &:hover {
@@ -85,7 +84,6 @@ const NavMenuIcon = styled(List)`
     display: none;
     height: 30px;
     margin-right: 5px;
-    color: ${props => props.theme.dark};
     cursor: pointer;
     border-radius: 100%;
 
@@ -101,7 +99,6 @@ const NavMenuIcon = styled(List)`
 const NameDisplay = styled.h1`
     font-size: 24px;
     margin-left: 20px;
-    color: ${props => props.theme.tertiary};
 
     @media screen and (max-width: ${bp.md}) {
         margin-right: auto;

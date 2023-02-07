@@ -15,7 +15,6 @@ const Container = styled.div`
     justify-content: space-between;
     height: 250px; 
     width: 350px;
-    color: ${props => props.theme.dark};
     border-radius: 20px;
 `;
 

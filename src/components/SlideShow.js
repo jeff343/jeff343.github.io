@@ -17,14 +17,15 @@ const Container = styled.div`
     display: flex;
     justify-conent: center;
     align-items: center;
-    height: 400px;
-    width: 300px;
+    height: 315px;
+    width: 215px;
     background: white;
     position: absolute;
-    left: -320px;
-    top: -200px;
+    right: 150px;
+    bottom: 100px;
     border-radius: 10px;
     animation: 0.5s ${fadeIn} ease-out;
+    background: ${props => props.theme.secondary};
 `;
 
 const ImgWrapper = styled(animated.div)`
@@ -33,6 +34,8 @@ const ImgWrapper = styled(animated.div)`
     margin: auto;
     backgound-position: center;
     background-size: cover;
+    border-radius: 10px;
+    overflow: hidden;
 `;
 
 const imgArr = [
