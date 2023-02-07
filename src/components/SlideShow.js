@@ -1,31 +1,17 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import moonPic from "../assets/images/moon-pic.jpg";
 import mountainPic from "../assets/images/mountain-pic.jpg";
 import { useTransition, animated } from "@react-spring/web";
 import { useState } from "react";
 
-const fadeIn = keyframes`
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-`;
-
 const Container = styled.div`
-    display: flex;
-    justify-conent: center;
-    align-items: center;
-    height: 315px;
-    width: 215px;
+    height: auto;
+    width: auto;
     background: white;
     position: absolute;
-    right: 150px;
-    bottom: 100px;
-    border-radius: 10px;
-    animation: 0.5s ${fadeIn} ease-out;
-    background: ${props => props.theme.secondary};
+    bottom: 75px;
+    right: 250px;
+    background: none;
 `;
 
 const ImgWrapper = styled(animated.div)`
@@ -34,8 +20,9 @@ const ImgWrapper = styled(animated.div)`
     margin: auto;
     backgound-position: center;
     background-size: cover;
-    border-radius: 10px;
+    border-radius: 20px;
     overflow: hidden;
+    box-shadow: 0 0 5px ${props => props.theme.tertiary};
 `;
 
 const imgArr = [
@@ -54,7 +41,7 @@ const SlideShow = () => {
         key: imgIdx,
         from: { opacity: 0 },
         enter: { opacity: 1},
-        leave: { opacity: 0},
+        leave: { opacity: 0.8},
         config: { duration: 3000 },
         onRest: (_a, _b, item) => {
             if (imgIdx === item) { 
