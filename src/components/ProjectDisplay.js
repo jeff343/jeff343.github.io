@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import ProjectCard from "./ProjectCard";
 import { breakpoints as bp } from "../styles/breakpoints";
+import { cardData } from "../assets/data/cardData";
 
 const Container = styled.section`
     margin: 20px auto 100px;
@@ -26,22 +27,14 @@ const CardContainer = styled.div`
     }
 `;
 
-const projectObj = [
-    {'id': 1},
-    {'id': 2},
-    {'id': 3},
-    {'id': 4}
-]
-
-
 const ProjectDisplay = () => {
 
     return (
         <Container>
             <Title>Projects</Title>
             <CardContainer>
-                {projectObj.map((project) => {
-                    return <ProjectCard key={project.id} />
+                {cardData.map((project) => {
+                    return <ProjectCard key={project.id} project={project} />
                 })
                     }
             </CardContainer>

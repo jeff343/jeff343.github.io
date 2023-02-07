@@ -1,14 +1,19 @@
 import styled from "styled-components";
 import { useState } from "react";
 import { ArrowRightSquareFill, ArrowLeftSquareFill } from "styled-icons/bootstrap";
-import moonPic from "../assets/images/moon-pic.jpg";
 
+
+// background: ${props => props.theme.primary};
+// background-image: url(${props => props.bgimg});
+// backgound-position: center;
+// background-size: contain;
+// background-repeat: no-repeat;
+// backface-visibility: hidden;
 const Container = styled.article`
     margin: auto;
     height: 300px;
     position: relative;
     width: 400px;
-    overflow: hidden;
 `;
 
 const Card = styled.div`
@@ -24,11 +29,17 @@ const CardFront = styled.div`
     height: 100%;
     width: 100%;
     position: absolute;
+    display: flex;
+    overflow: hidden;
     border-radius: 10px;
-    background-image: url(${moonPic});
-    backgound-position: center;
-    background-size: cover;
-    backface-visibility: hidden;
+    flex-direction: column;
+    justify-content: space-between;
+    background: ${props => props.theme.primary};
+`;
+
+const CardImg = styled.img`
+    width: 400px;
+    height: auto;
 `;
 
 const CardBack = styled.div`
@@ -38,8 +49,9 @@ const CardBack = styled.div`
     padding: 20px;
     height: 100%;
     width: 100%;
-    position: absolute;
+    overflow: hidden;
     border-radius: 10px;
+    position: absolute;
     backface-visibility: hidden;
     transform: rotateY(180deg);
     background: ${props => props.theme.primary};
@@ -51,10 +63,7 @@ const Title = styled.h3`
 `;
 
 const FrontTitle = styled(Title)`
-    position: absolute;
-    bottom: 5px;
-    left: 20px;
-    color: ${props => props.theme.secondary};
+    margin-left: 20px;
 `;
 
 const Text = styled.p`
@@ -65,7 +74,7 @@ const Text = styled.p`
 const LinkContainer = styled.div`
     display: flex;
     width: 90%;
-    justify-content: end;
+    justify-content: start;
 `;
 
 const LinkButton = styled.button`
@@ -94,8 +103,9 @@ const LeftIcon = styled(ArrowLeftSquareFill)`
 `;
 
 // will take a project object as props
-const ProjectCard = () => {
+const ProjectCard = ({ project }) => {
     const [showFront, setShowFront] = useState(true);
+    const {img, title, build, description} = project;
 
     const flipCard = () => {
         setShowFront(!showFront);
@@ -105,13 +115,23 @@ const ProjectCard = () => {
         <Container>
             <Card showFront={showFront}>
                 <CardFront>
-                    <FrontTitle>Project Title</FrontTitle>
+                    <CardImg src={img} alt='project' />
+                    <FrontTitle>{title}</FrontTitle>
                     <RightIcon onClick={() => flipCard()} />
+                    <LinkContainer>
+                        <LinkButton>live</LinkButton>
+                        <LinkButton>code</LinkButton>
+                    </LinkContainer>
                 </CardFront>
                 <CardBack>
-                    <Title>Project Title</Title>
-                    <Text size='small'>built with html/css/js</Text>
-                    <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu mollis mauris. Praesent porta pretium tempor. Praesent vitae mauris odio. Suspendisse vitae augue molestie, iaculis.</Text>
+                    <Title>{title}</Title>
+                    <Text size='small'>
+                        built with:
+                    </Text>
+                    {build.map((b) => {
+                        return <span><Text size='small'>{b}</Text></span>
+                    })}
+                    <Text>{description}</Text>
                     <LinkContainer>
                         <LinkButton>live</LinkButton>
                         <LinkButton>code</LinkButton>
