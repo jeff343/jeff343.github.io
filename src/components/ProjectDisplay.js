@@ -4,19 +4,14 @@ import { breakpoints as bp } from "../styles/breakpoints";
 
 const Container = styled.section`
     margin: 20px auto;
-    max-width: 1400px;
+    max-width: 900px;
 `;
 
 const Title = styled.h2`
     font-size: 36px;
     text-align: left;
-    margin-left: 18%;
     margin-bottom: 30px;
     color: ${props => props.theme.tertiary};
-
-    @media screen and (max-width: ${bp.lg}) {
-        margin-left: 12%;
-    }
 `;
 
 const CardContainer = styled.div`

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import NameCard from "./NameCard";
-import SkillsCard from "./SkillsCard";
+import ShowWork from "./ShowWork";
 import { breakpoints as bp } from "../styles/breakpoints";
 
 const Container = styled.div`
@@ -16,9 +16,9 @@ const Container = styled.div`
 
 const ContentWrapper = styled.section`
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     width: 100%;
-    max-width: 1400px;
+    max-width: 900px;
     margin: auto;
 
     @media screen and (max-width: ${bp.md}) {
@@ -35,7 +35,7 @@ const IntroDisplay = () => {
         <Container>
             <ContentWrapper>
                 <NameCard />
-                <SkillsCard />
+                <ShowWork />
             </ContentWrapper>
         </Container>
     )

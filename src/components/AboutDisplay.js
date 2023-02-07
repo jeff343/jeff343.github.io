@@ -7,9 +7,9 @@ import { breakpoints as bp } from "../styles/breakpoints";
 const Container = styled.section`
     display: flex;
     width: 100%;
-    max-width: 1400px;
+    max-width: 900px;
     margin: 40px auto;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: start;
 
     @media screen and (max-width: ${bp.md}) {
