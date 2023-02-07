@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import moonPic from "../assets/images/moon-pic.jpg";
-import mountainPic from "../assets/images/mountain-pic.jpg";
+import { slidesData } from "../assets/data/slidesData"; 
 import { useTransition, animated } from "@react-spring/web";
 import { useState } from "react";
 
@@ -16,7 +15,7 @@ const Container = styled.div`
 
 const ImgWrapper = styled(animated.div)`
     height: 300px;
-    width: 200px;
+    width: auto;
     margin: auto;
     backgound-position: center;
     background-size: cover;
@@ -25,14 +24,12 @@ const ImgWrapper = styled(animated.div)`
     box-shadow: 0 0 5px ${props => props.theme.tertiary};
 `;
 
-const imgArr = [
-    {
-        img: moonPic,
-    },
-    {
-        img: mountainPic,
-    }
-]
+const StyledImg = styled.img`
+    height: 300px;
+    width: auto;
+`
+
+
 
 const SlideShow = () => {
     const [imgIdx, setImgIdx] = useState(0);
@@ -45,7 +42,7 @@ const SlideShow = () => {
         config: { duration: 3000 },
         onRest: (_a, _b, item) => {
             if (imgIdx === item) { 
-                setImgIdx(state => (state + 1) % imgArr.length);
+                setImgIdx(state => (state + 1) % slidesData.length);
             }
         },
         exitBeforeEnter: true,
@@ -58,9 +55,10 @@ const SlideShow = () => {
             {transitions((springs, i) => (
                 <ImgWrapper 
                     style={{
-                        ...springs, 
-                        backgroundImage: `url(${imgArr[i].img})`
-                    }} />
+                        ...springs
+                    }} >
+                        <StyledImg src={slidesData[i].img} />
+                </ImgWrapper>
             ))}
         </Container>
     )
