@@ -38,8 +38,8 @@ const SlideShow = () => {
         key: imgIdx,
         from: { opacity: 0 },
         enter: { opacity: 1},
-        leave: { opacity: 0.8},
-        config: { duration: 3000 },
+        leave: { opacity: 1, delay: 1000 },
+        config: { duration: 2000 },
         onRest: (_a, _b, item) => {
             if (imgIdx === item) { 
                 setImgIdx(state => (state + 1) % slidesData.length);
