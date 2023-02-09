@@ -80,6 +80,10 @@ const LinkButton = styled.button`
     color: ${props => props.theme.background};
     margin: auto 15px;
     cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &:hover {
         transition: background 0.5s;
@@ -103,10 +107,10 @@ const LeftIcon = styled(ArrowLeftSquareFill)`
     cursor: pointer;
 `;
 
-// will take a project object as props
+// TODO update poke live site when pushed
 const ProjectCard = ({ project }) => {
     const [showFront, setShowFront] = useState(true);
-    const {img, title, build, description} = project;
+    const {img, title, build, description, code, live} = project;
 
     const flipCard = () => {
         setShowFront(!showFront);
@@ -120,8 +124,8 @@ const ProjectCard = ({ project }) => {
                     <FrontTitle>{title}</FrontTitle>
                     <RightIcon onClick={() => flipCard()} />
                     <LinkContainer start='start'>
-                        <LinkButton>live</LinkButton>
-                        <LinkButton>code</LinkButton>
+                        <LinkButton as="a" href={live} target="_blank">live</LinkButton>
+                        <LinkButton as="a" href={code} target="_blank">code</LinkButton>
                     </LinkContainer>
                 </CardFront>
                 <CardBack>
@@ -136,8 +140,8 @@ const ProjectCard = ({ project }) => {
                     </Row>
                     <Text>{description}</Text>
                     <LinkContainer>
-                        <LinkButton>live</LinkButton>
-                        <LinkButton>code</LinkButton>
+                        <LinkButton as="a" href={live} target="_blank">live</LinkButton>
+                        <LinkButton as="a" href={code} target="_blank">code</LinkButton>
                     </LinkContainer>
                     <LeftIcon onClick={() => flipCard()} />
                 </CardBack>
