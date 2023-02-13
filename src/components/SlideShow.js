@@ -36,10 +36,20 @@ const SlideShow = () => {
 
     const transitions = useTransition(imgIdx, {
         key: imgIdx,
-        from: { opacity: 0 },
-        enter: { opacity: 1},
-        leave: { opacity: 1, delay: 1000 },
-        config: { duration: 2000 },
+        from: { 
+                opacity: 0,
+                height: 0
+        },
+        enter: { 
+            opacity: 1,
+            height: 300
+        },
+        leave: { 
+            opacity: 1,
+            height: 0, 
+            delay: 2500
+         },
+        config: { duration: 500 },
         onRest: (_a, _b, item) => {
             if (imgIdx === item) { 
                 setImgIdx(state => (state + 1) % slidesData.length);

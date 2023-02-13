@@ -28,17 +28,11 @@ const AboutMe = styled.div`
 const Title = styled.h2`
     font-size: 36px;
     margin-bottom: 20px;
-    text-decoration: underline;
-    
-    @media screen and (max-width: ${bp.md}) {
-        text-align: center;
-    }
 `;
 
 const Text = styled.p`
     font-size: 16px;
 `;
-
 
 const AboutDisplay = () => {
 

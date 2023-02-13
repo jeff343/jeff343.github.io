@@ -12,11 +12,10 @@ const Title = styled.h2`
     font-size: 36px;
     text-align: left;
     margin-bottom: 50px;
-    text-decoration: underline;
 `;
 
 const CardContainer = styled.div`
-    max-width: 800px;
+    width: auto;
     margin: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;

@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-
 import mountainPic from "../assets/images/mountain-pic.jpg";
 
 
@@ -10,12 +9,13 @@ const GlobalStyles = createGlobalStyle`
     }
 `;
 
+
 const lightTheme = {
     background: '#f8f9fb',
     primary: '#e8f0fa',
     secondary: '#cee0f4',
     tertiary: '#5170bf',
-    bgimg: `linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.9)), url(${mountainPic})`,
+    bgimg: `linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.9)), url(${mountainPic})`,
     color: '#3f3f70'
 };
 
