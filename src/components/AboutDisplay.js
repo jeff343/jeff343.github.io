@@ -18,11 +18,20 @@ const Container = styled.section`
         flex-direction: column;
         align-items: center;
     }
+
+    @media screen and (max-width: ${bp.xs}) {
+        width: 90%;
+    }
 `;
 
 const AboutMe = styled.div`
     max-width: 400px;
     text-align: left;
+
+    @media screen and (max-width: ${bp.md}) {
+        text-align: center;
+        margin-bottom: 80px;
+    }
 `;
 
 const Title = styled.h2`

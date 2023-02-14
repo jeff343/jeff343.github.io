@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import ProjectCard from "./ProjectCard";
+import ProjectCarousel from "./ProjectCarousel";
 import { breakpoints as bp } from "../styles/breakpoints";
 import { cardData } from "../assets/data/cardData";
 
@@ -12,6 +13,10 @@ const Title = styled.h2`
     font-size: 36px;
     text-align: left;
     margin-bottom: 50px;
+
+    @media screen and (max-width: ${bp.md}) {
+        text-align: center;
+    }
 `;
 
 const CardContainer = styled.div`
@@ -22,7 +27,15 @@ const CardContainer = styled.div`
     grid-gap: 100px;
 
     @media screen and (max-width: ${bp.md}) {
-        grid-template-columns: 1fr;
+        display: none;
+    }
+`;
+
+const CarouselContainer = styled.div`
+    display: none;
+
+    @media screen and (max-width: ${bp.md}) {
+        display: block;
     }
 `;
 
@@ -33,10 +46,13 @@ const ProjectDisplay = () => {
             <Title>Projects</Title>
             <CardContainer>
                 {cardData.map((project) => {
-                    return <ProjectCard key={project.id} project={project} />
-                })
-                    }
+                        return <ProjectCard key={project.id} project={project} />
+                    })
+                }
             </CardContainer>
+            <CarouselContainer>
+                <ProjectCarousel projectData={cardData} />
+            </CarouselContainer>
         </Container>
     )
 };

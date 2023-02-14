@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import SlideShow from "./SlideShow";
+import { breakpoints as bp } from "../styles/breakpoints";
 import { useState } from "react";
 
 
@@ -8,6 +9,10 @@ display: flex;
 align-items: center;
 justify-content: center;
 position: relative;
+
+@media screen and (max-width: ${bp.md}) {
+    display: none;
+}
 `;
 
 const Circle = styled.div`
@@ -45,7 +50,7 @@ const ShowWork = () => {
                 onMouseEnter={()=>handleMouseEnter()}
                 onMouseLeave={()=>handleMouseLeave()}    
             >
-                <Title>show work</Title>
+                <Title>see work</Title>
                 {showSlides && <SlideShow />}
             </Circle>
         </Container>

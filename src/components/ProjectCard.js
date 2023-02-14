@@ -1,12 +1,17 @@
 import styled from "styled-components";
 import { useState } from "react";
 import { ArrowRightSquareFill, ArrowLeftSquareFill } from "styled-icons/bootstrap";
+import { breakpoints as bp } from "../styles/breakpoints";
 
 const Container = styled.div`
     margin: auto;
     height: 300px;
     position: relative;
     width: 400px;
+
+    @media screen and (max-width: ${bp.xs}) {
+        width: 375px;
+    }
 `;
 
 const Row = styled.div`
