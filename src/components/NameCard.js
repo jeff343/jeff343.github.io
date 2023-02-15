@@ -32,8 +32,6 @@ const NameCard = () => {
             <Desc size='small'>hi, my name is</Desc>
             <Title>Jeff Celone</Title>
             <Desc>front end developer</Desc>
-            {/* add link to prokject and get in touch */}
-            <Desc size='small'>see my projects</Desc>
         </Container>
     )
 };

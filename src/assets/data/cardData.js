@@ -18,7 +18,7 @@ export const cardData = [
         img: rpsPic,
         title: 'Rock, Paper, Scissors',
         build: ['React', 'Styled Components'],
-        description: 'Web app to play a game of Rock, Paper, Scissors agianst a computer opponent. The app keeps a running score which is updated based on the outcome of each round. Possible outcomes are win/draw/lose.',
+        description: 'Web app to play a game of Rock, Paper, Scissors agianst a computer opponent. Keeps a running score which is updated based on the outcome of each round. Possible outcomes are win/draw/lose.',
         code: 'https://github.com/jeff343/frem-rps-game',
         live: 'https://jeff343.github.io/frem-rps-game/'
     },

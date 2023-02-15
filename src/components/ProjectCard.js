@@ -129,8 +129,8 @@ const ProjectCard = ({ project }) => {
                     <FrontTitle>{title}</FrontTitle>
                     <RightIcon onClick={() => flipCard()} />
                     <LinkContainer start='start'>
-                        <LinkButton as="a" href={live} target="_blank">live</LinkButton>
-                        <LinkButton as="a" href={code} target="_blank">code</LinkButton>
+                        <LinkButton as="a" href={live} target="_blank" rel='noreferrer'>live</LinkButton>
+                        <LinkButton as="a" href={code} target="_blank" rel='noreferrer'>code</LinkButton>
                     </LinkContainer>
                 </CardFront>
                 <CardBack>
@@ -145,8 +145,8 @@ const ProjectCard = ({ project }) => {
                     </Row>
                     <Text>{description}</Text>
                     <LinkContainer>
-                        <LinkButton as="a" href={live} target="_blank">live</LinkButton>
-                        <LinkButton as="a" href={code} target="_blank">code</LinkButton>
+                        <LinkButton as="a" href={live} target="_blank" rel='noreferrer'>live</LinkButton>
+                        <LinkButton as="a" href={code} target="_blank" rel='noreferrer'>code</LinkButton>
                     </LinkContainer>
                     <LeftIcon onClick={() => flipCard()} />
                 </CardBack>

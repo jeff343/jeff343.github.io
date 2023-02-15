@@ -52,7 +52,7 @@ const ThemeSwitcher = ({ toggleTheme, current }) => {
     const springs = useSpring({
         ref: api,
         from: { 
-            width: 40,
+            width: 45,
             left: 2,
             right: 'unset'
         }
@@ -70,7 +70,7 @@ const ThemeSwitcher = ({ toggleTheme, current }) => {
     const handleLeave = () => {
         api.start({
             to: {
-                width: 40
+                width: 45
             },
             config: { duration: 300 }
         })
@@ -88,7 +88,7 @@ const ThemeSwitcher = ({ toggleTheme, current }) => {
                         right: 2
                     },
                     {
-                        width: 40
+                        width: 45
                     }
             ],
             config: { duration: 200 }
@@ -104,7 +104,7 @@ const ThemeSwitcher = ({ toggleTheme, current }) => {
                         right: 'unset'
                     },
                     {
-                        width: 40
+                        width: 45
                     }
             ],
             config: { duration: 200 }

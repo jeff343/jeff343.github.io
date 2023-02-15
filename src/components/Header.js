@@ -40,7 +40,7 @@ const NavCollapse = styled.div`
         position: absolute;
         right: 0px;
         top: 45px;
-        background: white;
+        background: ${props => props.theme.background};
         width: 150px;
         height: auto;
         border-radius: 10px;
@@ -84,7 +84,7 @@ const NavItem = styled.li`
 const NavMenuIcon = styled(List)`
     display: none;
     height: 30px;
-    margin-right: 5px;
+    margin-right: 20px;
     cursor: pointer;
     border-radius: 100%;
 
