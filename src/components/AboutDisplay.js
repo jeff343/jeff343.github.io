@@ -46,7 +46,7 @@ const Text = styled.p`
 const AboutDisplay = () => {
 
     return(
-        <Container>
+        <Container id='about'>
             <AboutMe>
                 <Title>About Me</Title>
                 <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu mollis mauris. Praesent porta pretium tempor. Praesent vitae mauris odio. Suspendisse vitae augue molestie, iaculis.</Text>

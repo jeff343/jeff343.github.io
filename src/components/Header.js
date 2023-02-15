@@ -26,7 +26,8 @@ const Navbar = styled.nav`
 
 const NavCollapse = styled.div`
     height: 100%;
-    width: 100%;
+    width: auto;
+    margin: auto;
     margin-right: 20px;
     display: flex;
     justify-content: end;
@@ -60,11 +61,11 @@ const NavItem = styled.li`
 
     & a {
         text-decoration: none;
-        color: ${props => props.theme.tertiary};
+        color: ${props => props.theme.color};
     }
 
     &:hover {
-        border-bottom: 3px solid ${props => props.theme.tertiary};
+        border-bottom: 3px solid ${props => props.theme.color};
     }
 
     @media screen and (max-width: ${bp.md}) {
@@ -134,8 +135,8 @@ const Header = ({ toggleTheme, current }) => {
             </NameDisplay>
             <NavCollapse menuOpen={menuOpen}>
                 <NavList>
-                    <NavItem><a href='/'>about</a></NavItem>
-                    <NavItem><a href='/'>projects</a></NavItem>
+                    <NavItem><a href='#about'>about</a></NavItem>
+                    <NavItem><a href='#projects'>projects</a></NavItem>
                 </NavList>
             </NavCollapse>
             <ThemeSwitcher toggleTheme={toggleTheme} current={current} />

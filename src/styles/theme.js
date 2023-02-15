@@ -4,8 +4,10 @@ import mountainPic from "../assets/images/mountain-pic.jpg";
 
 const GlobalStyles = createGlobalStyle`
     body {
-        background: ${props => props.theme.background};
+        background-color: ${props => props.theme.background};
         color: ${props => props.theme.color};
+        transition: background-color 0.5s linear;
+        transition: color 0.5s linear;
     }
 `;
 

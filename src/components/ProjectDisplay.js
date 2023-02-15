@@ -42,7 +42,7 @@ const CarouselContainer = styled.div`
 const ProjectDisplay = () => {
 
     return (
-        <Container>
+        <Container id='projects'>
             <Title>Projects</Title>
             <CardContainer>
                 {cardData.map((project) => {

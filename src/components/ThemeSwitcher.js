@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { useState } from "react";
+import { animated, useSpring, useSpringRef } from "@react-spring/web";
 import {
     Moon,
     MoonStarsFill,
@@ -8,57 +10,136 @@ import {
 import { ToggleIcon } from "../styles/IconStyle";
 
 const Container = styled.div`
-    width: 150px;
-    display: flex;
-    align-items: end;
-    justify-content: center;
-`;
-
-const ButtonContainer = styled.div`
-    width: 50px;
-    height: 25px;
+    height: 30px;
+    width: auto;
+    background: ${props => props.theme.primary};
+    border-radius: 10px;
     position: relative;
-    margin: auto 5px;
+    margin: auto 30px;
+    padding: 2px;
 `;
 
-const ThemeSwitchButton = styled.button`
-    width: 100%;
+const SwitchButton = styled.button`
+    background: transparent;
+    width: 50px;
     height: 100%;
-    border-radius: 200px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     border: none;
+    border-radius: 10px;
     cursor: pointer;
-    background: ${props => props.theme.secondary};
-    box-shadow: 0 0 15px inset grey;
-    transition: 0.3s;
+    padding: 2px;
 
-    &:after {
-        content: "";
-        width: 20px;
-        height: 20px;
-        top: 5px;
-        left: ${props => (props.current === 'light' ? '2px' : '48px') };
-        transform: ${props => (props.current === 'light' ? 'none' : 'translateX(-100%)')};
-        border-radius: 100%;
-        position: absolute;
-        background: ${props => props.theme.color};
-        box-shadow: 0 0 5px inset grey;
-        transition: 0.3s;
+    & * {
+        z-index: 1;
     }
 `;
 
+const BtnOverlay = styled(animated.div)`
+    height: 26px;
+    background-color: ${props => props.theme.secondary};
+    position: absolute;
+    top: 2px;
+    border-radius: 10px;
+`;
+
+
 const ThemeSwitcher = ({ toggleTheme, current }) => {
+    const api = useSpringRef();
+    const [ forward, setForward ] = useState(true)
+
+    const springs = useSpring({
+        ref: api,
+        from: { 
+            width: 40,
+            left: 2,
+            right: 'unset'
+        }
+    })
+
+    const handleEnter = () => {
+        api.start({
+            to: {
+                width: 50
+            },
+            config: { duration: 300 }
+        })
+    }
+
+    const handleLeave = () => {
+        api.start({
+            to: {
+                width: 40
+            },
+            config: { duration: 300 }
+        })
+    }
+
+    const handleClick = () => {
+        if (forward) {
+            api.start({
+                to: [
+                    {
+                        width: 100,
+                    },
+                    {
+                        left: 'unset',
+                        right: 2
+                    },
+                    {
+                        width: 40
+                    }
+            ],
+            config: { duration: 200 }
+            })
+        } else {
+            api.start({
+                to: [
+                    {
+                        width: 100,
+                    },
+                    {
+                        left: 2,
+                        right: 'unset'
+                    },
+                    {
+                        width: 40
+                    }
+            ],
+            config: { duration: 200 }
+            })
+        }
+        toggleTheme();
+        setForward(!forward);
+    }
+
 
     return (
         <Container>
-            <ToggleIcon>
-                {current === 'light' ? <SunFill /> : <Sun />}
-            </ToggleIcon>
-            <ButtonContainer>
-                <ThemeSwitchButton current={current} onClick={() => toggleTheme()} />
-            </ButtonContainer>
-            <ToggleIcon>
-                {current === 'light' ? <Moon /> : <MoonStarsFill />}
-            </ToggleIcon>
+            <SwitchButton
+                disabled={forward}
+                onMouseEnter={() => handleEnter()} 
+                onMouseLeave={()=>handleLeave()}
+                onClick={()=>handleClick()}
+            >
+                <ToggleIcon>
+                    {current === 'light' ? <SunFill /> : <Sun />}
+                </ToggleIcon>
+            </SwitchButton>
+            <SwitchButton 
+                disabled={!forward}
+                onMouseEnter={() => handleEnter()} 
+                onMouseLeave={()=>handleLeave()}
+                onClick={()=>handleClick()}
+            >
+                <ToggleIcon>
+                    {current === 'light' ?  <Moon /> : <MoonStarsFill />}
+                </ToggleIcon>
+            </SwitchButton>
+            <BtnOverlay  
+                style={{...springs}}
+            />
         </Container>
     )
 };

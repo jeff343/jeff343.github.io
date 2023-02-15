@@ -4,7 +4,6 @@ import { darkTheme, GlobalStyles, lightTheme } from "./styles/theme";
 import Header from "./components/Header";
 import PortfolioPage from "./pages/PortfolioPage";
 
-// TODO: add theme switcher to header
 function App() {
   const [theme, setTheme] = useState('light');
 

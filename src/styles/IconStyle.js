@@ -12,5 +12,6 @@ export const ToggleIcon = styled.div`
     ${StyledIconBase} {
         height: 20px;
         width: auto;
+        color: ${props => props.theme.color};
     }
 `;
