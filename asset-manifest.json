@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b0664264.css",
+    "main.js": "/static/js/main.a99b0bd2.js",
+    "static/media/project-slide4.png": "/static/media/project-slide4.b54179bb754eb81b13de.png",
+    "static/media/mountain-pic.jpg": "/static/media/mountain-pic.b5f42b7d4d035f1fbd1e.jpg",
+    "static/media/project-slide5.png": "/static/media/project-slide5.9dbb14317910a883e6a2.png",
+    "static/media/rps-project.png": "/static/media/rps-project.4e57a53404a610b51d85.png",
+    "static/media/listings-project.png": "/static/media/listings-project.d956c150a2a6621077f0.png",
+    "static/media/poke-project.png": "/static/media/poke-project.b8b964f0d697b4097a64.png",
+    "static/media/country-project.png": "/static/media/country-project.ae0624021df99a24c053.png",
+    "static/media/project-slide2.png": "/static/media/project-slide2.9ebf845a86948b1385c2.png",
+    "static/media/project-slide1.png": "/static/media/project-slide1.ab959c8735ea51d77a10.png",
+    "static/media/project-slide3.png": "/static/media/project-slide3.dd6704f2b4462f66d008.png",
+    "static/media/project-slide6.png": "/static/media/project-slide6.63c2c7cfe3bc9938add5.png",
+    "index.html": "/index.html",
+    "main.b0664264.css.map": "/static/css/main.b0664264.css.map",
+    "main.a99b0bd2.js.map": "/static/js/main.a99b0bd2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b0664264.css",
+    "static/js/main.a99b0bd2.js"
+  ]
+}
