@@ -2,6 +2,17 @@ import styled from "styled-components";
 import { useState } from "react";
 import { ArrowRightSquareFill, ArrowLeftSquareFill } from "styled-icons/bootstrap";
 import { breakpoints as bp } from "../styles/breakpoints";
+import { useSpring, animated } from "@react-spring/web";
+
+
+// transform-style: preserve-3d;
+// transform: ${props => props.showFront ? 'rotateY(0deg)' : 'rotateY(180deg)'};
+// transition: transform 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+// -webkit-transition: -webkit-transform 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+// -o-transform-style: preserve-3d;
+// -o-transition: -o-transform 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+// -moz-transform-style: preserve-3d;
+// -moz-transition: -moz-transform 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
 const Container = styled.div`
     margin: auto;
@@ -24,17 +35,9 @@ const Card = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;
-    transform-style: preserve-3d;
-    transform: ${props => props.showFront ? 'rotateY(0deg)' : 'rotateY(180deg)'};
-    transition: transform 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    -webkit-transition: -webkit-transform 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    -o-transform-style: preserve-3d;
-    -o-transition: -o-transform 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    -moz-transform-style: preserve-3d;
-    -moz-transition: -moz-transform 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     `;
 
-const CardFront = styled.div`
+const CardFront = styled(animated.div)`
     height: 100%;
     width: 100%;
     position: absolute;
@@ -122,10 +125,14 @@ const LeftIcon = styled(ArrowLeftSquareFill)`
     cursor: pointer;
 `;
 
-// TODO update poke live site when pushed
 const ProjectCard = ({ project }) => {
     const [showFront, setShowFront] = useState(true);
     const {img, title, build, description, code, live} = project;
+    const { transform, opacity } = useSpring({
+        opacity: showFront ? 0 : 1,
+        transform: `rotateY(${showFront ? 0 : 180}deg)`,
+        config: { mass: 5, tension: 300, friction: 40 }
+    })
 
     const flipCard = () => {
         setShowFront(!showFront);
@@ -134,7 +141,9 @@ const ProjectCard = ({ project }) => {
     return (
         <Container>
             <Card showFront={showFront}>
-                <CardFront>
+                <CardFront
+                    style={{opacity: opacity.to(o => 1 - o), transform}}
+                >
                     <CardImg src={img} alt='project' />
                     <FrontTitle><a href={live} target="_blank" rel='noreferrer'>{title}</a></FrontTitle>
                     <RightIcon onClick={() => flipCard()} />
@@ -143,7 +152,13 @@ const ProjectCard = ({ project }) => {
                         <LinkButton as="a" href={code} target="_blank" rel='noreferrer'>code</LinkButton>
                     </LinkContainer>
                 </CardFront>
-                <CardBack>
+                <CardBack
+                    style={{
+                        opacity: opacity, 
+                        transform,
+                        rotateY: '180deg'
+                    }}
+                >
                     <Title>{title}</Title>
                     <Row>
                         <Text size='small'>
