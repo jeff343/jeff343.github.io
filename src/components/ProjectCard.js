@@ -4,16 +4,6 @@ import { ArrowRightSquareFill, ArrowLeftSquareFill } from "styled-icons/bootstra
 import { breakpoints as bp } from "../styles/breakpoints";
 import { useSpring, animated } from "@react-spring/web";
 
-
-// transform-style: preserve-3d;
-// transform: ${props => props.showFront ? 'rotateY(0deg)' : 'rotateY(180deg)'};
-// transition: transform 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-// -webkit-transition: -webkit-transform 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-// -o-transform-style: preserve-3d;
-// -o-transition: -o-transform 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-// -moz-transform-style: preserve-3d;
-// -moz-transition: -moz-transform 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
 const Container = styled.div`
     margin: auto;
     height: 300px;
