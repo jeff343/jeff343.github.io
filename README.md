@@ -4,7 +4,7 @@ Portfolio page built to display my current projects.
 
 # Link
 
-- Live Site - [Portfolio](https://myusername.github.io)
+- Live Site - [Portfolio](https://jeff343.github.io/)
 
 ## Built With
 
