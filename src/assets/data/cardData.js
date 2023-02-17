@@ -11,7 +11,7 @@ export const cardData = [
         build: ['React', 'MUI'],
         description: 'Fully responsive website built to consume the free pokeAPI. Used Material UI for styling and components. Page allows the user to query the API for informtion about pokemon and berries, and returns that information in a clean and concise UI.',
         code: 'https://github.com/jeff343/poke-api',
-        live: 'https://jeff343.github.io/frem-rps-game/'
+        live: 'https://jeff343.github.io/poke-api/'
     },
     {
         id: 2,
