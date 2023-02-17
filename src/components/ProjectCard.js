@@ -25,8 +25,13 @@ const Card = styled.div`
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    transition: transform 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transform: ${props => props.showFront ? 'rotateY(0deg)' : 'rotateY(180deg)'};
+    transition: transform 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -webkit-transition: -webkit-transform 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -o-transform-style: preserve-3d;
+    -o-transition: -o-transform 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -moz-transform-style: preserve-3d;
+    -moz-transition: -moz-transform 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     `;
 
 const CardFront = styled.div`
@@ -61,6 +66,11 @@ const Title = styled.h3`
 
 const FrontTitle = styled(Title)`
     margin: 10px 20px 25px;
+
+    & a {
+        text-decoration: none;
+        color: ${props => props.theme.color};
+    }
 `;
 
 const Text = styled.p`
@@ -126,7 +136,7 @@ const ProjectCard = ({ project }) => {
             <Card showFront={showFront}>
                 <CardFront>
                     <CardImg src={img} alt='project' />
-                    <FrontTitle>{title}</FrontTitle>
+                    <FrontTitle><a href={live} target="_blank" rel='noreferrer'>{title}</a></FrontTitle>
                     <RightIcon onClick={() => flipCard()} />
                     <LinkContainer start='start'>
                         <LinkButton as="a" href={live} target="_blank" rel='noreferrer'>live</LinkButton>
